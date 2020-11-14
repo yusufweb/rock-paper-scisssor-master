@@ -1,0 +1,447 @@
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: sans-serif;
+}
+
+body {
+    background: -webkit-radial-gradient(hsl(214, 47%, 23%),hsl(237, 49%, 15%));
+    background: -moz-radial-gradient(hsl(214, 47%, 23%),hsl(237, 49%, 15%));
+    background: -o-radial-gradient(hsl(214, 47%, 23%),hsl(237, 49%, 15%));
+    background: radial-gradient(hsl(214, 47%, 23%),hsl(237, 49%, 15%));
+    font-size: 62.5%;
+    font-weight: 600;
+}
+
+.container {
+    width: 100%;
+    height: auto;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+button {
+    padding: 1rem 0.6rem;
+    text-transform: uppercase;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 10px;
+    outline: none;
+}
+
+/* header section */
+#header {
+    width: 100%;
+    height: 120px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 4px solid hsl(217, 16%, 45%);
+    border-radius: 10px;
+    margin: 2rem 0;
+}
+
+#header .game-logo {
+    width: 8rem;
+    margin: 0 1.5rem;
+}
+
+#header .game-logo img {
+    width: 6rem;
+}
+
+#game-score {
+    background-color: #f1f1f1;
+    text-align: center;
+    padding: 1rem 1.5rem;
+    border-radius: 6px;
+    margin: 0 0.7rem;
+}
+
+#game-score p {
+    color: hsl(229, 64%, 46%);
+    text-transform: uppercase;
+    font-size: .7rem;
+    font-weight: bold;
+}
+
+#game-score h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: hsl(229, 25%, 31%);
+}
+
+/* strategies section */
+#strategies {
+    position: relative;
+    height: 400px;
+    max-height: 400px;
+    margin-top: 10rem;
+    background: url('../images/bg-triangle.svg') no-repeat;
+    background-position: center center;
+    display: block;
+}
+
+#paper,
+#scissors,
+#rock {
+    position: absolute;
+}
+
+.paper-bordered,
+.scissors-bordered,
+.rock-bordered {
+    border-radius: 100px;
+    /* border: solid 14px transparent; */
+    display: inline-block;
+    padding: 5px;
+    width: 150px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f1f1f1;
+    cursor: pointer;
+}
+
+.paper-bordered {
+    border: 17px solid hsl(230, 89%, 65%);
+    /* background-image: linear-gradient(white,white),
+    linear-gradient(to right,hsl(230, 89%, 62%),hsl(230, 89%, 65%));;
+    background-origin: border-box;
+    background-clip: content-box,border-box; */
+    box-shadow: inset 0px 6px 0px 0px hsl(210deg 5% 72% / 73%),
+    -1px 9px 0px 0px hsla(230, 89%, 62%, 0.726);
+}
+
+.scissors-bordered {
+    border: 17px solid hsl(40, 84%, 53%);
+    /* background-image: linear-gradient(white,white),
+    linear-gradient(to right,hsl(39, 89%, 49%),hsl(40, 84%, 53%));;
+    background-origin: border-box;
+    background-clip: content-box,border-box;
+    box-shadow: -1px 9px 0px 0px hsla(39, 89%, 49%, 0.726); */
+
+    box-shadow: inset 0px 6px 0px 0px hsl(210deg 5% 72% / 73%),
+    -1px 9px 0px 0px hsla(39, 89%, 49%, 0.726);
+}
+
+.rock-bordered {
+    border: 17px solid hsl(349, 70%, 56%);
+    /* background-image: linear-gradient(white,white),
+    linear-gradient(to right,hsl(349, 71%, 52%),hsl(349, 70%, 56%));;
+    background-origin: border-box;
+    background-clip: content-box,border-box;
+    box-shadow: -1px 9px 0px 0px hsla(349, 71%, 52%, 0.726); */
+
+    box-shadow: inset 0px 6px 0px 0px hsl(210deg 5% 72% / 73%),
+    -1px 9px 0px 0px hsla(349, 71%, 52%, 0.726);
+}
+
+#paper {
+    left: 0;
+    top: 0;
+}
+
+#scissors {
+    top: 0px;
+    right: 0px;
+}
+
+#rock {
+    bottom: -10px;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+/* Game outcome/result */
+#game-outcome {
+    width: 100%;
+    margin-top: 5rem;
+    display: none;
+}
+
+#outcome {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+#player-strategy,
+#house-strategy {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#player-strategy p,
+#house-strategy p {
+    margin: 3rem 0;
+    font-size: .8rem;
+    color: #f1f1f1;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+#win-lose {
+    width: 70%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#win-lose p {
+    color: #f1f1f1;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+}
+
+#win-lose button {
+    width: 100%; 
+    background: #f1f1f1;
+    border: none;
+    display: inline-block;
+    margin: 1rem 0;
+    font-weight: 700;
+    color: hsl(229, 25%, 31%);
+}
+
+/* rules btn */
+#game-rules {
+    width: 100%;
+    margin: 2rem auto;
+    text-align: center;
+}
+
+#game-rules button {
+    width: 40%;
+    background: transparent;
+    border: 1px solid #f1f1f1;
+    color: #f1f1f1;
+}
+
+/* large screen @medias */
+@media (min-width: 800px) {
+    .container {
+        max-width: 1000px;
+    }
+
+    #header {
+        width: 70%;
+        margin: 2rem auto;
+    }
+    
+    #header .game-logo img {
+        width: 100%;
+    }
+    
+    #game-score {
+        padding: 1rem 2rem;
+    }
+
+    #strategies {
+        width: 50%;
+        margin: 0 auto;
+        /* display: block; */
+    }
+
+    #player-strategy p,
+    #house-strategy p {
+        order: 1;
+    }
+
+    #player-bordered,
+    #house-move {
+        order: 2;
+    }
+
+    #player-move,
+    #house-move {
+        order: 2;
+        width: 230px;
+        height: 230px;
+        padding: 12px;
+        border-width: 25px;
+        border-radius: 100%;
+    }
+
+    #player-move img,
+    #house-move img {
+        width: 50%;
+    }
+
+    #outcome {
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    #player-strategy {
+        width: 30%;
+        order: 1;
+    }
+
+    #house-strategy {
+        width: 30%;
+        order: 3;
+    }
+
+    #win-lose {
+        width: 30%;
+        order: 2;
+        margin-top: 8rem;       
+    }
+
+    #win-lose p {
+        font-size: 3rem;
+    }
+
+    #win-lose button {
+        width: 85%;
+    }
+
+    #win-lose button:hover {
+        color: hsl(349, 71%, 52%);
+    }
+
+    #game-rules {
+        padding-right: 2rem;
+        text-align: right;
+    }
+
+    #game-rules button {
+        width: 10%;
+        padding: 0.6rem;
+        font-weight: normal;
+    }
+}
+
+/* modal */
+.modal {
+    display: block;
+    position: fixed;
+    z-index: 1;
+    padding-top: 0px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    padding: 2rem 1.5rem;
+    animation: zoom;
+    animation-duration: 650ms;
+}
+
+@keyframes zoom {
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(1)
+    }
+}
+
+.modal-content .modal-heading {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 0.5rem;
+    flex-direction: column;
+}
+
+.modal-content .modal-heading h2 {
+    font-size: 1.9rem;
+    font-weight: 700;
+    color: hsl(229, 25%, 31%);
+}
+
+.modal-content .modal-heading button {
+    background: none;
+    border: none;
+    outline: none;
+    padding: 0.5rem;
+}
+
+.modal-text {
+    width: 100%;
+    text-align: center;
+    order: 1;
+}
+
+.close-icon {
+    width: 100%;
+    order: 3;
+    text-align: center;
+}
+
+.modal-content img {
+    margin: auto;
+    order: 2;
+    padding: 1.2rem 0;
+}
+
+.modal-content img {
+    margin: 1rem 0;
+}
+
+/* @media for modal large screen */
+@media (min-width: 800px) {
+    .modal {
+        padding-top: 100px;
+    }
+
+    .modal-content {
+        max-width: 400px;
+        height: auto;
+        border-radius: 10px;
+        text-align: center; 
+        padding: 0 1.5em;
+    }
+
+     .modal-content .modal-heading {
+        flex-direction: row;
+        flex-wrap: wrap;
+        height: auto;
+    }
+
+    .modal-text {
+        width: 50%;
+        text-align: left;
+        order: 1;
+        margin: 0.5rem 0;
+    }
+
+    .close-icon {
+        width: 50%;
+        order: 2;
+        text-align: right;
+    }
+
+    .modal-content img {
+        margin: auto;
+        order: 3;
+        padding: 2rem 0;
+    }
+}

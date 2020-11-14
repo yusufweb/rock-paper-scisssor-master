@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="css/style.css">
+  <title>Frontend Mentor | Rock, Paper, Scissors</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- header section -->
+    <div id="header">
+      <div class="game-logo">
+        <img src="images/logo.svg" alt="rock-paper-scissor-logo">
+      </div>
+      <div id="game-score">
+        <p>Score</p>
+        <h1 id="score"></h1>
+      </div>
+    </div>  
+    <!-- strategies/move/weapon section -->
+    <div id="move">
+      <div id="strategies">
+        <div id="paper" class="paper-bordered player-weapon">
+          <img src="images/icon-paper.svg" alt="paper" class="player-weapo">
+        </div>
+        <div id="scissors" class="scissors-bordered player-weapon">
+          <img src="images/icon-scissors.svg" alt="scissors" class="player-weapo">
+        </div>
+        <div id="rock" class="rock-bordered player-weapon">
+          <img src="images/icon-rock.svg" alt="rock" class="player-weapo">
+        </div>
+      </div>
+    </div>
+    <!-- games outcome/result -->
+    <div id="game-outcome">
+      <div id="outcome">
+        <!-- player moves/strategy -->
+        <div id="player-strategy">
+          <div id="player-move">
+            <img src="images/icon-paper.svg" alt="rock" id="player-pick" class="w-100">
+          </div>
+          <p>You Picked</p>
+        </div>
+         <!-- house move/strategy -->
+        <div id="house-strategy">
+          <div id="house-move">
+            <img src="images/icon-scissors.svg" alt="scissors" id="house-pick">
+          </div>
+          <p>The House Picked</p>
+        </div>
+        <!-- win/lose section -->
+        <div id="win-lose">
+          <p id="result">You Win</p>
+          <button type="button" id="play-again">Play Again</button>
+        </div>
+      </div>
+    </div>
+    <!-- You Lose -->
+  </div>
+
+   <!-- rules section [button to trigger game rule] -->
+  <div id="game-rules">
+    <button type="button" id="rules">Rules</button>
+  </div>
+
+  <!-- modal for displaying game rule -->
+  <div class="modal">
+    <div class="modal-content">
+      <div class="modal-heading">
+        <div class="modal-text">
+            <h2>RULES</h2>
+        </div>
+        <div class="close-icon">
+          <button type="button" class="close-modal">
+            <img src="images/icon-close.svg" alt="close">
+          </button>
+        </div>
+        <img src="images/image-rules.svg" alt="game rules">
+      </div>
+    </div>
+  </div>
+
+  <!-- <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Frontendgeek</a>.
+  </div> -->
+  <script src="js/jquery.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
