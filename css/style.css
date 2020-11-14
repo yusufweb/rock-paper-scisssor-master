@@ -7,7 +7,7 @@
 }
 
 html {
-    font-family: sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 body {
@@ -82,11 +82,12 @@ button {
 #strategies {
     position: relative;
     height: 400px;
-    max-height: 400px;
-    margin-top: 10rem;
+    max-height: 300px;
+    margin: 10rem 0;
     background: url('../images/bg-triangle.svg') no-repeat;
     background-position: center center;
     display: block;
+    padding: 2rem;
 }
 
 #paper,
@@ -99,10 +100,9 @@ button {
 .scissors-bordered,
 .rock-bordered {
     border-radius: 100px;
-    /* border: solid 14px transparent; */
     display: inline-block;
     padding: 5px;
-    width: 150px;
+    width: 155px;
     height: 150px;
     display: flex;
     justify-content: center;
@@ -113,50 +113,34 @@ button {
 
 .paper-bordered {
     border: 17px solid hsl(230, 89%, 65%);
-    /* background-image: linear-gradient(white,white),
-    linear-gradient(to right,hsl(230, 89%, 62%),hsl(230, 89%, 65%));;
-    background-origin: border-box;
-    background-clip: content-box,border-box; */
-    box-shadow: inset 0px 6px 0px 0px hsl(210deg 5% 72% / 73%),
+    box-shadow: inset 1px 7px 0px 0px hsl(210deg 5% 72% / 73%),
     -1px 9px 0px 0px hsla(230, 89%, 62%, 0.726);
 }
 
 .scissors-bordered {
     border: 17px solid hsl(40, 84%, 53%);
-    /* background-image: linear-gradient(white,white),
-    linear-gradient(to right,hsl(39, 89%, 49%),hsl(40, 84%, 53%));;
-    background-origin: border-box;
-    background-clip: content-box,border-box;
-    box-shadow: -1px 9px 0px 0px hsla(39, 89%, 49%, 0.726); */
-
-    box-shadow: inset 0px 6px 0px 0px hsl(210deg 5% 72% / 73%),
+    box-shadow: inset 1px 7px 0px 0px hsl(210deg 5% 72% / 73%),
     -1px 9px 0px 0px hsla(39, 89%, 49%, 0.726);
 }
 
 .rock-bordered {
     border: 17px solid hsl(349, 70%, 56%);
-    /* background-image: linear-gradient(white,white),
-    linear-gradient(to right,hsl(349, 71%, 52%),hsl(349, 70%, 56%));;
-    background-origin: border-box;
-    background-clip: content-box,border-box;
-    box-shadow: -1px 9px 0px 0px hsla(349, 71%, 52%, 0.726); */
-
-    box-shadow: inset 0px 6px 0px 0px hsl(210deg 5% 72% / 73%),
+    box-shadow: inset 1px 7px 0px 0px hsl(210deg 5% 72% / 73%),
     -1px 9px 0px 0px hsla(349, 71%, 52%, 0.726);
 }
 
 #paper {
-    left: 0;
-    top: 0;
+    left: 0px;
+    top: -55px;
 }
 
 #scissors {
-    top: 0px;
+    top: -55px;
     right: 0px;
 }
 
 #rock {
-    bottom: -10px;
+    bottom: -50px;
     left: 50%;
     transform: translate(-50%,-50%);
 }
@@ -208,7 +192,7 @@ button {
 }
 
 #win-lose button {
-    width: 100%; 
+    width: 85%; 
     background: #f1f1f1;
     border: none;
     display: inline-block;
@@ -225,40 +209,78 @@ button {
 }
 
 #game-rules button {
-    width: 40%;
+    width: 35%;
     background: transparent;
     border: 1px solid #f1f1f1;
     color: #f1f1f1;
 }
 
-/* large screen @medias */
-@media (min-width: 800px) {
+/* large  and tablet screen @medias */
+@media (min-width: 768px) {
+    #paper {
+        left: 5px;
+        top: -60px;
+    }
+    
+    #scissors {
+        top: -60px;
+        right: 5px;
+    }
+
+    #rock {
+        bottom: -60px;
+    }
+
+    #win-lose button {
+        width: 70%; 
+    }
+
+    #game-rules button {
+        width: 20%;
+    }
+}
+
+@media (min-width: 900px) {
     .container {
         max-width: 1000px;
     }
 
     #header {
-        width: 70%;
+        width: 60%;
         margin: 2rem auto;
     }
     
     #header .game-logo img {
         width: 100%;
     }
+
+    #strategies {
+        width: 50%;
+        margin: 80px auto;
+    }
+
+    #paper {
+        left: 45px;
+        top: -35px;
+    }
+    
+    #scissors {
+        top: -35px;
+        right: 45px;
+    }
+
+    #rock {
+        bottom: -60px;
+    }
     
     #game-score {
         padding: 1rem 2rem;
     }
 
-    #strategies {
-        width: 50%;
-        margin: 0 auto;
-        /* display: block; */
-    }
-
     #player-strategy p,
     #house-strategy p {
         order: 1;
+        font-size: 1.2rem;
     }
 
     #player-bordered,
@@ -285,6 +307,10 @@ button {
         flex-wrap: nowrap;
         justify-content: space-between;
         align-items: center;
+    }
+
+    #game-outcome {
+        margin-top: 0rem;
     }
 
     #player-strategy {
@@ -337,7 +363,7 @@ button {
     top: 0;
     width: 100%;
     height: 100%;
-    overflow: auto;
+    overflow: none;
     background-color: rgba(0, 0, 0, 0.5);
 }
 
