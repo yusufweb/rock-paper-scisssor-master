@@ -12,7 +12,7 @@ $(document).ready(function () {
     // close modal rule Image
     $(".close-modal").on("click", function () {
         $(".modal").css("display", "none");
-    })
+    });
 
     // player weapon/move/strategy
     $(".player-weapon").each(function () {
