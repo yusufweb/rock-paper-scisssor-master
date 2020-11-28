@@ -94,6 +94,8 @@ button {
 #scissors,
 #rock {
     position: absolute;
+    width: 145px;
+    height: 145px;
 }
 
 .paper-bordered,
@@ -102,8 +104,8 @@ button {
     border-radius: 100px;
     display: inline-block;
     padding: 5px;
-    width: 155px;
-    height: 150px;
+    /* width: 155px;
+    height: 150px; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -173,11 +175,17 @@ button {
 #player-strategy p,
 #house-strategy p {
     margin: 3rem 0;
-    font-size: .8rem;
+    font-size: 0.75rem;
     color: #f1f1f1;
     text-transform: uppercase;
     font-weight: 600;
-    letter-spacing: 3px;
+    letter-spacing: 2px;
+}
+
+#player-move,
+#house-move {
+    width: 150px;
+    height: 150px;
 }
 
 #win-lose {
@@ -292,8 +300,8 @@ button {
     #player-move,
     #house-move {
         order: 2;
-        width: 230px;
-        height: 230px;
+        width: 230px!important;
+        height: 230px!important;
         padding: 12px;
         border-width: 25px;
         border-radius: 100%;
@@ -356,7 +364,7 @@ button {
 
 /* modal */
 .modal {
-    display: block;
+    display: none;
     position: fixed;
     z-index: 1;
     padding-top: 0px;
